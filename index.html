@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Inventory Manager</title>
+    <link rel="stylesheet" href="style.css">
+   <script type="module" src="dist/app.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Product Inventory Manager</h1>
+        <p>Manage products, prices, and stock availability</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Add a Product</h2>
+            <form id="productForm">
+                <label for="name">Product Name</label>
+                <input id="name" type="text" required>
+
+                <label for="price">Price (₹)</label>
+                <input id="price" type="number" min="0.01" step="0.01" required>
+
+                <label for="tags">Tags (comma-separated)</label>
+                <input id="tags" type="text" placeholder="electronics, accessories">
+
+                <label class="stock-label">
+                    <input id="inStock" type="checkbox" checked>
+                    In stock
+                </label>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Inventory</h2>
+            <p id="summary">Loading inventory...</p>
+            <input id="search" type="search" placeholder="Search products...">
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+                            <th>Tags</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTable"></tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>Built with HTML, CSS and TypeScript</footer>
+</body>
+</html>
